@@ -1,0 +1,94 @@
+<phone:PhoneApplicationPage 
+    x:Class="Doodle.VIEWEDIT"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="DOODLE" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="EDIT DOODLE" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock Name="DisplayTextBlock"
+                       HorizontalAlignment="Stretch"
+VerticalAlignment="Stretch"
+                       FontFamily="Verdana"
+                       TextWrapping="Wrap"
+                       Visibility="Visible"
+                       Hold="DisplayTextBlock_Hold"
+                       />
+            <TextBox Name="editTextBox"
+                     FontFamily="Verdana"
+                     HorizontalAlignment="Stretch"
+VerticalAlignment="Stretch"
+                     TextWrapping="Wrap"
+Visibility="Collapsed"/>
+            
+           <!-- <Canvas Name="CONFIRM"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Background="Aquamarine"
+                    Margin="50,100,0,0"
+                    Width="350"
+                    Height="300"
+                    >
+            <TextBlock Text="CONFIRM DELETION???"
+                       Width="330"
+                       FontFamily="Segoe WP Black"
+                       Height="75"
+                       TextWrapping="Wrap"
+                       Canvas.Left="10"
+                       Canvas.Top="10"
+                       FontSize="22"
+                       />
+                <Button Name="CANCELbutt"
+                        Canvas.Left="10"
+                        Canvas.Top="150"
+                        Content="CANCEL"
+                        Width="150"
+                        Click="CANCELbutt_Click"
+                        />
+                <Button Name="DELETEbutt"
+                        Canvas.Left="180"
+                        Canvas.Top="150"
+                        Content="NO SAVE IT!!!"
+                        Width="150"
+                        Click="DELETEbutt_Click"
+                        />
+
+            </Canvas>-->
+
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.back.rest.png" Text="BACK" Click="AppBar_BACK_click" />
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.save.rest.png" Text="SAVE" Click="AppBar_SAVE_click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.edit.rest.png" Text="EDIT" Click="AppBar_EDIT_click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.delete.rest.png" Text="DELETE" Click="AppBar_DELETE_click"/>
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>
